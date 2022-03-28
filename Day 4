@@ -38,4 +38,4 @@ while (rodada <= tentativas) {
   }
   rodada = rodada + 1;
 }
-alert("Fim do Jogo");
+alert("Fim do Jogo. O número correto era o " + numeroSecreto);
