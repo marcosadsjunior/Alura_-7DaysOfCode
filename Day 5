@@ -1,0 +1,49 @@
+// Day 5
+const msgInicial =
+  "Gostaria de adicionar algum produto na sua lista?\nResponda com 'sim' ou 'nao'";
+
+var categoriaFrutas = [];
+var categoriaLiquidos = [];
+var categoriaCongelados = [];
+var categoriaDoces = [];
+var categoriaCarnes = [];
+let desejaAdicionar = prompt(msgInicial);
+
+while (desejaAdicionar != "nao") {
+  let msgItem = "Qual item gostaria de adicionar na sua lista?";
+  let msgCategoria =
+    "Qual a categoria do produto adicionado anteriormente?\n" +
+    "Frutas, Liquidos, Congelados, Doces, Carnes";
+  let item = prompt(msgItem);
+  let categoria = prompt(msgCategoria);
+
+  if (categoria == "Frutas") {
+    categoriaFrutas.push(item);
+  } else if (categoria == "Liquidos") {
+    categoriaLiquidos.push(item);
+  } else if (categoria == "Congelados") {
+    categoriaCongelados.push(item);
+  } else if (categoria == "Doces") {
+    categoriaDoces.push(item);
+  } else if (categoria == "Carnes") {
+    categoriaCarnes.push(item);
+  } else {
+    alert("A opção digitada é invalida!");
+  }
+  desejaAdicionar = prompt(msgInicial);
+}
+
+let msgFinal =
+  "Lista de compras: \n\n" +
+  "Frutas: " +
+  categoriaFrutas +
+  "\nLiquidos: " +
+  categoriaLiquidos +
+  "\nCongelados: " +
+  categoriaCongelados +
+  "\nDoces: " +
+  categoriaDoces +
+  "\nCarnes: " +
+  categoriaCarnes;
+
+alert(msgFinal);
