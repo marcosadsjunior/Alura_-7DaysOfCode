@@ -1,0 +1,74 @@
+function terceiraVerificacao(escolhaLiguagem, escolhaCarreira) {
+  const stringEspecializarOuFullstack =
+    "Bacana demais!, e voce pretende se especializar nessa liguagem ou ser um desenvolvedor fullstack? 1- Especialista 2- FullStack";
+
+  var especializarOuFullstack = prompt(stringEspecializarOuFullstack);
+  if (especializarOuFullstack == 1) {
+    especializarOuFullstack = "Especialista";
+  } else if (especializarOuFullstack == 2) {
+    especializarOuFullstack = "FullStack";
+  }
+
+  const stringTecnologiasFuturo =
+    "Por fim, me conte um pouco sobre quais tecnologias voce quer aprender para seguir carrera no futuro. Para sair digite 'Sair'";
+
+  let msg = prompt(
+    "Tem mais alguma tecnologia que você gostaria de aprender? Digite 'ok' em caso positivo."
+  );
+
+  var novaTecnologiaAcumulada = "";
+
+  while (msg === "ok") {
+    var novaTecnologia = prompt(stringTecnologiasFuturo);
+    alert(`${novaTecnologia} é realmente uma tecnologia muito legal!`);
+    msg = prompt(
+      "Tem mais alguma tecnologia que você gostaria de aprender? Digite 'ok' em caso positivo."
+    );
+    novaTecnologiaAcumulada = novaTecnologiaAcumulada + novaTecnologia + " ";
+  }
+
+  const mensagemFinal =
+    "Show! Então voce pretende seguir na carreira " +
+    escolhaCarreira +
+    " focando na liguagem " +
+    escolhaLiguagem +
+    " sendo " +
+    especializarOuFullstack +
+    " e quer aprender ou especializar nas seguintes tecnologias: " +
+    novaTecnologiaAcumulada;
+
+  alert(mensagemFinal);
+}
+
+function segundaVerificacao(escolhaCarreira) {
+  if (escolhaCarreira == "frontEnd") {
+    var escolhaLiguagem = prompt(
+      "Nossa que legal! e me diga você pretende seguir em qual liguagem? 1 - React 2 - Vue"
+    );
+    if (escolhaLiguagem == 1) {
+      escolhaLiguagem = "React";
+    } else if (escolhaLiguagem == 2) {
+      escolhaLiguagem = "Vue";
+    }
+
+    terceiraVerificacao(escolhaLiguagem, escolhaCarreira);
+  } else if (escolhaCarreira == "backEnd") {
+    escolhaLiguagem = prompt(
+      "Nossa que legal! e me diga você pretende seguir em qual liguagem? 1 - C# 2 - JAVA"
+    );
+    if (escolhaLiguagem == 1) {
+      escolhaLiguagem = "C#";
+    } else if (escolhaLiguagem == 2) {
+      escolhaLiguagem = "JAVA";
+    }
+    terceiraVerificacao(escolhaLiguagem, escolhaCarreira);
+  } else {
+    alert("Opcao nao disponivel");
+  }
+}
+
+function verificaCarreira() {
+  const valorElementoCarreiraFrontOrBack = document.getElementById("carreira")
+    .value;
+  segundaVerificacao(valorElementoCarreiraFrontOrBack);
+}
