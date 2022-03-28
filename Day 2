@@ -1,0 +1,42 @@
+alert("Olá bem vindo, porfavor respondar as perguntas a seguir:");
+var nome = prompt("Qual o seu nome? ");
+var idade = prompt("Quantos anos você tem? ");
+var linguagemProgramacao = prompt(
+  "Qual linguagem de programação você está estudando?"
+);
+
+alert(
+  "Olá " +
+    nome +
+    ", você tem " +
+    idade +
+    " anos e já está aprendendo " +
+    linguagemProgramacao +
+    "!"
+);
+
+function verificaSeGostaEstudar() {
+  var opcaoAluno = prompt(
+    "Você gosta de estudar " +
+      linguagemProgramacao +
+      "? Responda com o número 1 para SIM ou 2 para NÃO."
+  );
+  if (opcaoAluno == 1 || opcaoAluno == 2) {
+    return opcaoAluno;
+  } else {
+    return false;
+  }
+}
+
+var gostaEstudar = verificaSeGostaEstudar();
+
+while (gostaEstudar == false) {
+  alert("Porfavor informe a opção 1 ou 2");
+  var gostaEstudar = verificaSeGostaEstudar();
+}
+
+if (gostaEstudar == 1) {
+  alert("Muito bom! Continue estudando e você terá muito sucesso.");
+} else if (gostaEstudar == 2) {
+  alert("Ahh que pena... Já tentou aprender outras linguagens?");
+}
