@@ -1,0 +1,41 @@
+// Day 4
+function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+const msgBoasVindas =
+  "Bem-Vindo ao jogo de advinhação!! \n Você deve escolher um número entre 0 e 10";
+alert(msgBoasVindas);
+
+const numeroSecreto = getRandomIntInclusive(0, 10);
+var rodada = 1;
+var tentativas = 3;
+
+while (rodada <= tentativas) {
+  alert(`Tentativa ${rodada} de um total de ${tentativas}`);
+  let msgChute = "Qual o seu chute?";
+  let chute = prompt(msgChute);
+  let acertou = chute == numeroSecreto;
+  let errou = "Opcao invalida";
+  let maior = chute > numeroSecreto;
+  let menor = chute < numeroSecreto;
+  let msgMaior =
+    "Desculpe, mas o número que você escolheu é maior que o numero secreto";
+  let msgMenor =
+    "Desculpe, mas o número que você escolheu é menor que o numero secreto";
+
+  if (acertou) {
+    alert("Parabéns você escolheu o número correto!!!");
+    break;
+  } else if (maior) {
+    alert(msgMaior);
+  } else if (menor) {
+    alert(msgMenor);
+  } else {
+    alert(errou);
+  }
+  rodada = rodada + 1;
+}
+alert("Fim do Jogo");
