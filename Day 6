@@ -1,0 +1,85 @@
+// Day 6
+const msgInicial =
+  "Gostaria de adicionar algum produto na sua lista?\nResponda com 'sim' ou 'nao'\n ou responda 'remover' para remover algum item";
+
+var categoriaFrutas = [];
+var categoriaLiquidos = [];
+var categoriaCongelados = [];
+var categoriaDoces = [];
+var categoriaCarnes = [];
+
+function remocaoItens() {
+  const msgRemocao = "Qual item deseja remover?\n";
+  const msgNaoFoiPossivelEncontrarItem =
+    "Não foi possível encontrar o item dentro da lista!!";
+  let itemRemocao = prompt(msgRemocao + mensagemFinal());
+  let removerItem;
+  //let categoria = "";
+  let itemRemovido = "";
+
+  if (categoriaFrutas.indexOf(itemRemocao) != -1) {
+    itemRemovido = categoriaFrutas.splice(removerItem, 1);
+    alert("O item " + itemRemovido + "foi removido com sucesso!");
+  } else if (categoriaLiquidos.indexOf(itemRemocao) != -1) {
+    itemRemovido = categoriaLiquidos.splice(removerItem, 1);
+    alert("O item " + itemRemovido + "foi removido com sucesso!");
+  } else if (categoriaCongelados.indexOf(itemRemocao) != -1) {
+    itemRemovido = categoriaCongelados.splice(removerItem, 1);
+    alert("O item " + itemRemovido + "foi removido com sucesso!");
+  } else if (categoriaDoces.indexOf(itemRemocao) != -1) {
+    itemRemovido = categoriaDoces.splice(removerItem, 1);
+    alert("O item " + itemRemovido + "foi removido com sucesso!");
+  } else if (categoriaCarnes.indexOf(itemRemocao) != -1) {
+    itemRemovido = categoriaCarnes.splice(removerItem, 1);
+    alert("O item " + itemRemovido + "foi removido com sucesso!");
+  }
+}
+
+function mensagemFinal() {
+  let msgFinal =
+    "Lista de compras atual: \n\n" +
+    "Frutas: " +
+    categoriaFrutas +
+    "\nLiquidos: " +
+    categoriaLiquidos +
+    "\nCongelados: " +
+    categoriaCongelados +
+    "\nDoces: " +
+    categoriaDoces +
+    "\nCarnes: " +
+    categoriaCarnes;
+
+  return msgFinal;
+}
+
+while (desejaAdicionar != "nao") {
+  if (desejaAdicionar == "remover") {
+    remocaoItens();
+    break;
+  }
+
+  var desejaAdicionar = prompt(msgInicial);
+  let msgItem = "Qual item gostaria de adicionar na sua lista?";
+  let msgCategoria =
+    "Qual a categoria do produto adicionado anteriormente?\n" +
+    "Frutas, Liquidos, Congelados, Doces, Carnes";
+  let item = prompt(msgItem);
+  let categoria = prompt(msgCategoria);
+
+  if (categoria == "Frutas") {
+    categoriaFrutas.push(item);
+  } else if (categoria == "Liquidos") {
+    categoriaLiquidos.push(item);
+  } else if (categoria == "Congelados") {
+    categoriaCongelados.push(item);
+  } else if (categoria == "Doces") {
+    categoriaDoces.push(item);
+  } else if (categoria == "Carnes") {
+    categoriaCarnes.push(item);
+  } else {
+    alert("A opção digitada é invalida!");
+  }
+  //  desejaAdicionar = prompt(msgInicial);
+}
+
+alert(mensagemFinal());
