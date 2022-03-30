@@ -1,0 +1,56 @@
+function soma(a, b) {
+  return a + b;
+}
+
+function subtracao(a, b) {
+  return a - b;
+}
+
+function multiplicacao(a, b) {
+  return a * b;
+}
+
+function divisao(a, b) {
+  return a / b;
+}
+
+const msgInicial = "Bem vindo a caluladora em javascriot!";
+const msgPrimeiroNumero = "Digite o primeiro numero";
+const msgSegundoNumero = "Digite o segundo numero";
+const msgOperacao =
+  "Agora informe qual operação deseja fazer \n 1-Soma\n 2-Subtração\n 3-Multiplicação\n 4-Divisão\n 5-sair";
+alert(msgInicial);
+do {
+  var primeiroNumero = parseFloat(prompt(msgPrimeiroNumero));
+  var segundoNumero = parseFloat(prompt(msgSegundoNumero));
+  var operacao = parseInt(prompt(msgOperacao));
+
+  if (operacao >= 1 && operacao <= 5) {
+    let resultado = "";
+
+    switch (operacao) {
+      case 1:
+        resultado = soma(primeiroNumero, segundoNumero);
+        alert("resultado: " + resultado);
+        break;
+      case 2:
+        resultado = subtracao(primeiroNumero, segundoNumero);
+        alert("resultado: " + resultado);
+        break;
+      case 3:
+        resultado = multiplicacao(primeiroNumero, segundoNumero);
+        alert("resultado: " + resultado);
+        break;
+      case 4:
+        resultado = divisao(primeiroNumero, segundoNumero);
+        alert("resultado: " + resultado);
+        break;
+      case 5:
+        var sair = "ok";
+        break;
+    }
+  } else {
+    alert("opção invalida, porfavor escolha uma opção correta!");
+  }
+} while (operacao != 5);
+alert("Muito obrigado por usar esta calculadora!");
